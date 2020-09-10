@@ -9,5 +9,7 @@ Builds the assets in dev mode.
 Builds and watches the assets in dev mode.
 ### `npm run build`
 Build the assest for production.
+## Compiled files
+You can find the compiled files in `web/assets/dist`.
 ## License
 Licensed under the [MIT license](https://github.com/plutonianbe/craftcms-frontend-boilerplate/blob/master/LICENSE)
