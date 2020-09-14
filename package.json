@@ -1,23 +1,24 @@
 {
-  "name": "vapebel",
+  "name": "craftcms-frontend-boilerplate",
   "version": "1.0.0",
-  "description": "## SSL certificate configuration",
+  "description": "Simple boilerplate for Craft CMS with scss and ES6.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node ./post-install.js",
     "watch": "webpack --watch --mode=development",
     "dev": "webpack --mode=development",
     "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/plutonianbe/thisisnotanagency-vapebel.git"
+    "url": "git+ssh://git@github.com:plutonianbe/craftcms-frontend-boilerplate.git"
   },
   "author": "mathias@plutonian.be",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/plutonianbe/thisisnotanagency-vapebel/issues"
+    "url": "https://github.com/plutonianbe/craftcms-frontend-boilerplate/issues"
   },
-  "homepage": "https://gitlab.com/plutonianbe/thisisnotanagency-vapebel#readme",
+  "homepage": "https://github.com/plutonianbe/craftcms-frontend-boilerplate#readme",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
@@ -28,6 +29,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.3.0",
     "default-passive-events": "^2.0.0",
+    "gently-copy": "^3.2.0",
     "jquery": "^3.5.1",
     "mini-css-extract-plugin": "^0.11.1",
     "node-sass": "^4.14.1",
