@@ -19,14 +19,17 @@ var userPath = process.env.INIT_CWD
 gentlyCopy(filesToCopy, userPath)
 
 // Insert scripts
-const saveFile = require('fs').writeFileSync;
+const fs = require('fs');
 
 const pkgJsonPath = require.main.paths[0].split('node_modules')[0] + 'package.json';
 
+
+if (!fs.existsSync(pkgJsonPath)) {
+  console.log('No package.json file found. Use `npm init` to create one and try installing this package again.')
+  return
+}
+
 const json = require(pkgJsonPath);
-
-console.log(json);
-
 
 if (!json.hasOwnProperty('scripts')) {
   json.scripts = {};
@@ -34,6 +37,6 @@ if (!json.hasOwnProperty('scripts')) {
 
 json.scripts['watch'] = 'webpack --watch --mode=development';
 json.scripts['dev'] = 'webpack --mode=development';
-json.scripts['build'] = 'webpack --watch --mode=production';
+json.scripts['build'] = 'webpack --mode=production';
 
-saveFile(pkgJsonPath, JSON.stringify(json, null, 2));
+fs.writeFileSync(pkgJsonPath, JSON.stringify(json, null, 2));
