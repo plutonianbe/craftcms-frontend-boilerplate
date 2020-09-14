@@ -22,9 +22,10 @@ gentlyCopy(filesToCopy, userPath)
 const saveFile = require('fs').writeFileSync;
 
 const pkgJsonPath = require.main.paths[0].split('node_modules')[0] + 'package.json';
-console.log(require);
 
 const json = require(pkgJsonPath);
+
+console.log(json);
 
 
 if (!json.hasOwnProperty('scripts')) {
